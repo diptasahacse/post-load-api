@@ -3,9 +3,10 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     .then(allData => setData(allData))
 
 function setData(allData) {
+    const row = document.getElementById('parent-row');
+
     for (const data of allData) {
         const { id, title, body } = data;
-        const row = document.getElementById('parent-row');
         const col = document.createElement('div');
         col.classList.add('col-md-4');
         const innerTemplate = `
